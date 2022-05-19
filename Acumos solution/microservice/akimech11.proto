@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message Text_in{
+    int64 audioid = 1;
+    string text = 2;
+}
+
+message Empty{
+
+}
+
+
+service getInput {
+	rpc getIP(Text_in) returns (Empty);
+	}
+
+

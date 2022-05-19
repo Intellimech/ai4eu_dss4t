@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: audiofilebroker1
+  labels:
+    app: audiofilebroker1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: audiofilebroker1
+  template:
+    metadata:
+      labels:
+        app: audiofilebroker1
+    spec:
+      imagePullSecrets:
+      - name: acumos-registry
+      containers:
+      - name: audiofilebroker1
+        image: docker.io/darthfinal/audiofilebroker:latest
+        ports:
+        - name: protobuf-api
+          containerPort: 8061
+        - name: webui
+          containerPort: 8062

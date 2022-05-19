@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akimech11
+  labels:
+    app: akimech11
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: akimech11
+  template:
+    metadata:
+      labels:
+        app: akimech11
+    spec:
+      imagePullSecrets:
+      - name: acumos-registry
+      containers:
+      - name: akimech11
+        image: docker.io/consorziointellimech/akimech1:latest
+        ports:
+        - name: protobuf-api
+          containerPort: 8061
+        - name: webui
+          containerPort: 8062

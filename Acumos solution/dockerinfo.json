@@ -1,0 +1,1 @@
+{"docker_info_list":[{"container_name":"akimech11","ip_address":"akimech11","port":"8556"},{"container_name":"audiofilebroker1","ip_address":"audiofilebroker1","port":"8556"},{"container_name":"convert-audio-to-text-eng1","ip_address":"convert-audio-to-text-eng1","port":"8556"},{"container_name":"orchestrator","ip_address":"orchestrator","port":"8061"}]}

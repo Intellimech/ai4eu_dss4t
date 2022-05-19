@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: convert-audio-to-text-eng1
+  labels:
+    app: convert-audio-to-text-eng1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: convert-audio-to-text-eng1
+  template:
+    metadata:
+      labels:
+        app: convert-audio-to-text-eng1
+    spec:
+      imagePullSecrets:
+      - name: acumos-registry
+      containers:
+      - name: convert-audio-to-text-eng1
+        image: docker.io/darthfinal/speechtotext2:latest
+        ports:
+        - name: protobuf-api
+          containerPort: 8061
+        - name: webui
+          containerPort: 8062
